@@ -8,7 +8,11 @@ const userRoutes = require("./route/userRoute");
 const app = express();
 
 app.use(express.json());
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://herlangga.my.id", // Ganti dengan URL frontend Anda
+  })
+);
 
 app.use("/api/auth", authRoutes);
 app.use("/api/user", userRoutes);
