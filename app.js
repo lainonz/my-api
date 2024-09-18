@@ -17,15 +17,15 @@ app.use(
   })
 );
 
-const swaggercss =
+const CSS_URL =
   "https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.1.0/swagger-ui.min.css";
 
 app.use("/api/auth", authRoutes);
 app.use("/api/user", userRoutes);
 app.use(
-  "/",
+  "/api-docs",
   swaggerUi.serve,
-  swaggerUi.setup(swaggerSpec, { customCssUrl: swaggercss })
+  swaggerUi.setup(swaggerSpec, { customCssUrl: CSS_URL })
 );
 
 mongoose
