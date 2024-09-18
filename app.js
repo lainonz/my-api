@@ -10,7 +10,6 @@ const userRoutes = require("./route/userRoute");
 
 const app = express();
 
-app.use("/", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 app.use(express.json());
 app.use(
@@ -21,6 +20,7 @@ app.use(
 
 app.use("/api/auth", authRoutes);
 app.use("/api/user", userRoutes);
+app.use("/", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 mongoose
   .connect(config.mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
