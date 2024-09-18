@@ -8,6 +8,11 @@ const options = {
       version: "1.0.0",
       description: "API documentation for your project",
     },
+    servers: [
+      {
+        url: "https://api.herlangga.my.id", // Ganti dengan URL produksi jika perlu
+      },
+    ],
   },
   apis: ["./route/*.js"], // Lokasi file route Express.js kamu
 };
