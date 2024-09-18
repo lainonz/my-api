@@ -17,9 +17,16 @@ app.use(
   })
 );
 
+const swaggercss =
+  "https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.1.0/swagger-ui.min.css";
+
 app.use("/api/auth", authRoutes);
 app.use("/api/user", userRoutes);
-app.use("/", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+app.use(
+  "/",
+  swaggerUi.serve,
+  swaggerUi.setup(swaggerSpec, { customCssUrl: swaggercss })
+);
 
 mongoose
   .connect(config.mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
