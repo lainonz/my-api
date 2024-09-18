@@ -15,7 +15,7 @@ app.use("/", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 app.use(express.json());
 app.use(
   cors({
-    origin: "https://herlangga.my.id",
+    origin: "*",
   })
 );
 
@@ -26,9 +26,5 @@ mongoose
   .connect(config.mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log("MongoDB connected"))
   .catch((err) => console.log(err));
-
-app.listen(config.port, () => {
-  console.log(`Server running on port ${config.port}`);
-});
 
 module.exports = app;
