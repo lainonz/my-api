@@ -2,11 +2,13 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const config = require("./config");
-const authRoutes = require("./route/authRoute");
-const userRoutes = require("./route/userRoute");
 
 const swaggerSpec = require("./swagger");
 const swaggerUi = require("swagger-ui-express");
+
+const authRoutes = require("./route/authRoute");
+const userRoutes = require("./route/userRoute");
+const animeRoutes = require("./route/animeRoute");
 
 const app = express();
 
@@ -19,6 +21,7 @@ app.use(
 
 app.use("/api/auth", authRoutes);
 app.use("/api/user", userRoutes);
+app.use("/api/anime", animeRoutes);
 app.use(
   "/",
   swaggerUi.serve,
