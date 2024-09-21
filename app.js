@@ -9,6 +9,7 @@ const swaggerUi = require("swagger-ui-express");
 const authRoutes = require("./route/authRoute");
 const userRoutes = require("./route/userRoute");
 const animeRoutes = require("./route/animeRoute");
+const postRoutes = require("./route/postRoute");
 
 const app = express();
 
@@ -22,6 +23,8 @@ app.use(
 app.use("/api/auth", authRoutes);
 app.use("/api/user", userRoutes);
 app.use("/api/anime", animeRoutes);
+app.use("/uploads", express.static("uploads"));
+app.use("/api/posts", postRoutes);
 app.use(
   "/",
   swaggerUi.serve,
