@@ -1,6 +1,7 @@
 // otakuDesuController.js
 const axios = require("axios");
 const cheerio = require("cheerio");
+require("dotenv").config(); // Pastikan ini ada di bagian atas file
 
 // Fungsi untuk mengambil semua anime dari homepage
 const fetchAllAnime = async (req, res) => {
