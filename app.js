@@ -10,6 +10,7 @@ const authRoutes = require("./route/authRoute");
 const userRoutes = require("./route/userRoute");
 const animeRoutes = require("./route/animeRoute");
 const postRoutes = require("./route/postRoute");
+const otakuRoutes = require("./route/otakuDesuRoute");
 
 const app = express();
 
@@ -25,6 +26,7 @@ app.use("/api/user", userRoutes);
 app.use("/api/anime", animeRoutes);
 app.use("/uploads", express.static("uploads"));
 app.use("/api/posts", postRoutes);
+app.use("/api/otakudesu", otakuRoutes);
 app.use(
   "/",
   swaggerUi.serve,
